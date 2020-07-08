@@ -3,8 +3,10 @@
 //  ASTB Syllabus Proto
 //
 //  Created by Alex Hastings on 3/19/20.
-//  Copyright © 2020 Alex Hastings. All rights reserved.
+//  Copyright © 2019 Alex Hastings. All rights reserved.
 //
+// Git PAT
+// 06541e00e01ddef21d6d9d518e5274bdd184f168
 
 import UIKit
 
