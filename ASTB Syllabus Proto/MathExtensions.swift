@@ -50,7 +50,9 @@ extension NSMutableAttributedString {
         let scriptTextAttributes: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.font: scriptFont,
             NSAttributedString.Key.baselineOffset: baseLineOffset,
-            NSAttributedString.Key.foregroundColor: UIColor.blue
+            // Changes color from blue to black
+//            NSAttributedString.Key.foregroundColor: UIColor.blue
+            NSAttributedString.Key.foregroundColor: UIColor.black
         ]
 
         for (i,c) in string.enumerated() {

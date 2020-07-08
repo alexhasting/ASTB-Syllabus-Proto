@@ -66,7 +66,10 @@ class ReviewAnswerCell: UICollectionViewCell {
         super.init(frame: frame)
         backgroundColor = .white
 
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleCheckLogic))
+        tap.numberOfTapsRequired = 1
+        addGestureRecognizer(tap)
+
 
     }
     

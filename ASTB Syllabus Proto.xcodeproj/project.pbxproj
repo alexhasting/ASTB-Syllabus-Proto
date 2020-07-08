@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2701595424B6601F006DF121 /* MechanicalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2701595324B6601F006DF121 /* MechanicalData.swift */; };
 		2E35860A2427C896009D65C7 /* OverviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3586092427C896009D65C7 /* OverviewData.swift */; };
 		2E35860C24284167009D65C7 /* MathData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E35860B24284167009D65C7 /* MathData.swift */; };
 		2E35860E242854E0009D65C7 /* BIRVData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E35860D242854E0009D65C7 /* BIRVData.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2701595324B6601F006DF121 /* MechanicalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicalData.swift; sourceTree = "<group>"; };
 		2E3586092427C896009D65C7 /* OverviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewData.swift; sourceTree = "<group>"; };
 		2E35860B24284167009D65C7 /* MathData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathData.swift; sourceTree = "<group>"; };
 		2E35860D242854E0009D65C7 /* BIRVData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BIRVData.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				2E3D5DD324243E65008185AD /* SyllabusData.swift */,
 				2E3586092427C896009D65C7 /* OverviewData.swift */,
 				2E35860B24284167009D65C7 /* MathData.swift */,
+				2701595324B6601F006DF121 /* MechanicalData.swift */,
 				2E35860D242854E0009D65C7 /* BIRVData.swift */,
 			);
 			path = Data;
@@ -308,6 +311,7 @@
 				2E35860C24284167009D65C7 /* MathData.swift in Sources */,
 				2E3D5DB824241B1F008185AD /* AppDelegate.swift in Sources */,
 				2E3D5DD924253F29008185AD /* LessonCell.swift in Sources */,
+				2701595424B6601F006DF121 /* MechanicalData.swift in Sources */,
 				2E3D5DE02425A524008185AD /* MathExtensions.swift in Sources */,
 				2E3D5DE52425CC42008185AD /* ReviewHeader.swift in Sources */,
 				2E3D5DD424243E65008185AD /* SyllabusData.swift in Sources */,

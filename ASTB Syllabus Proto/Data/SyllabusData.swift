@@ -48,12 +48,12 @@ struct Lesson {
 func loadLessons() ->([[Lesson]]) {
     let overviewLessons =  OverviewData().loadOverviewLessons()
     let mathSkillsLessons = MathData().loadMathLessons()
-    
+    let mechanicalLessons = MechanicaData().loadmechanicalLessons()
     let BIRV = BIRVData().loadBIRVLessons()
     
     
     
-    let allLessons = [overviewLessons, mathSkillsLessons, BIRV]
+    let allLessons = [overviewLessons, mathSkillsLessons, mechanicalLessons, BIRV]
     
     return allLessons
 }

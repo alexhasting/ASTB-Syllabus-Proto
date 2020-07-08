@@ -52,6 +52,12 @@ class LessonCell: UICollectionViewCell {
         
     }
     
+    override var isHighlighted: Bool {
+        didSet {
+            shrink(down: isHighlighted)
+        }
+    }
+    
     func setupUI() {
         addSubview(lessonTitleLabel)
         lessonTitleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 8, paddingBottom: 5, paddingRight: 45, width: 0, height: 0)
@@ -59,9 +65,24 @@ class LessonCell: UICollectionViewCell {
         addSubview(completeImageView)
         completeImageView.anchor(top: nil, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 5, width: 40, height: 40)
         completeImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
+        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 1.5)
+        layer.shadowRadius = 5.0
+        layer.shadowOpacity = 1.0
+        layer.masksToBounds = false
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius + 10).cgPath
     }
     
-    
+    func shrink(down: Bool) {
+        UIView.animate(withDuration: 0.2) {
+        if down {
+            self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        } else  {
+            self.transform = .identity
+        }
+      }
+    }
     
     
     

@@ -14,7 +14,9 @@ class SyllabusController: UICollectionViewController, UICollectionViewDelegateFl
     
     var lessons = [[Lesson]]()
     
-    
+    override func viewDidLayoutSubviews() {
+        navigationController?.reloadInputViews()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,18 +29,26 @@ class SyllabusController: UICollectionViewController, UICollectionViewDelegateFl
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         lessons = loadLessons()
-        
         collectionView.backgroundColor = .white
-        
         collectionView.register(SyllabusHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
         collectionView.register(TopicCell.self, forCellWithReuseIdentifier: cellId)
         
         
+        // Setup Top Offset in collectionview
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 20
+        layout.sectionInset = UIEdgeInsets(top: 15, left: 0, bottom: 50, right: 0)
+        collectionView.setCollectionViewLayout(layout, animated: false)
+        
     }
+    
+    
     
 // Header Setup
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

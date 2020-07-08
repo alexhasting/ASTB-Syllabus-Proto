@@ -24,6 +24,10 @@ class TopicCell: UICollectionViewCell {
                 case .mathSkills:
                     lessonTitleLabel.text = "Math Skills"
                     backgroundColor = .cellBlue
+                case .mechanicalComprehension:
+                    lessonTitleLabel.text = "Mechanical Comprehension"
+                    backgroundColor = .cellBlue
+                    iconImageView.image = #imageLiteral(resourceName: "MechanicalIcon")
                 case .BIRV:
                     lessonTitleLabel.text = "Biographical Inventory with Response Validation"
                     backgroundColor = .cellYellow
@@ -100,12 +104,26 @@ class TopicCell: UICollectionViewCell {
         return label
     }()
     
+    let iconImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        iv.clipsToBounds = true
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        return iv
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .cellGray
         
         setupUI()
         
+    }
+    
+    override var isHighlighted: Bool {
+        didSet {
+            shrink(down: isHighlighted)
+        }
     }
     
     func setupUI() {
@@ -134,9 +152,31 @@ class TopicCell: UICollectionViewCell {
         addSubview(inProgressLabel)
         inProgressLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 7, paddingLeft: 15, paddingBottom: 0, paddingRight: 0, width: 75, height: 25)
         
+        //Icon Imageview
+        addSubview(iconImageView)
+        iconImageView.anchor(top: nil, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, width: 130, height: 110)
+        iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
+        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 1.5)
+        layer.shadowRadius = 5.0
+        layer.shadowOpacity = 1.0
+        layer.masksToBounds = false
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius + 10).cgPath
+        layer.backgroundColor = UIColor.clear.cgColor
+        
         
     }
     
+    func shrink(down: Bool) {
+        UIView.animate(withDuration: 0.2) {
+        if down {
+            self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        } else  {
+            self.transform = .identity
+        }
+      }
+    }
 
     
     required init?(coder: NSCoder) {
