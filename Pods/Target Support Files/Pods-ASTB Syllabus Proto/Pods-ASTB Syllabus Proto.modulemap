@@ -1,0 +1,6 @@
+framework module Pods_ASTB_Syllabus_Proto {
+  umbrella header "Pods-ASTB Syllabus Proto-umbrella.h"
+
+  export *
+  module * { export * }
+}
